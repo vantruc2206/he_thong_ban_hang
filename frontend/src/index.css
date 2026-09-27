@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nike Store Design System Tokens & Foundations (DESIGN_v1.md & SKILL_V1.md) */
+:root {
+  --font-family-primary: 'Inter', 'Helvetica Now Text Medium', Helvetica, Arial, sans-serif;
+  --font-family-display: 'Outfit', 'Inter', sans-serif;
+
+  /* Typography Scale */
+  --font-size-xs: 9px;
+  --font-size-sm: 12px;
+  --font-size-md: 14px;
+  --font-size-lg: 16px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+
+  /* Color Palette Tokens */
+  --color-text-primary: #111111;
+  --color-text-secondary: #707072;
+  --color-text-tertiary: #28282a;
+  --color-surface-base: #000000;
+  --color-surface-muted: #ffffff;
+  --color-surface-card: #f9f9f9;
+  --color-border-subtle: #e5e5e5;
+  --color-accent-red: #e52e2e;
+  --color-accent-green: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  background-color: #f7f7f7;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility Focus-Visible Rules (WCAG 2.2 AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #111111;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(17, 17, 17, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #707072;
+}
+
+/* Micro-animations */
+.transition-smooth {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.12);
+}
+
+/* Button & Badge Tokens */
+.btn-primary {
+  background-color: #111111;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid #111111;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+.btn-primary:hover {
+  background-color: #707072;
+  border-color: #707072;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #111111;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+.btn-secondary:hover {
+  border-color: #111111;
+  background-color: #f9f9f9;
+}
+
+.badge-tag {
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
